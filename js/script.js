@@ -169,3 +169,114 @@ str.length - и получить её длину)
 //     console.log("Произошла ошибка");
 // }
 // console.log(personalMovieDB);
+//16 Urok
+// let num = 20; //глобальная переменная
+// function showFirstMessage(text) {//в круглые скобки передаем аргументы функции
+//     console.log(text);
+//     //num = 10;//переписывает глобальную переменную
+//     let num = 10;//console log обращается к глобальной пеперменной и не видит локальную
+// }
+// showFirstMessage("Hello World!");//вызов функции, обращаемся к имени
+// console.log(num);//console log обращается к глобальной пеперменной и не видит локальную
+// function calc(a, b){
+//     return (a + b);
+// }
+// console.log(calc(4, 3));
+// console.log(calc(5, 6));
+// console.log(calc(10, 6));
+
+// function ret(){//функция работает до того как она создана
+//     let num = 50;
+
+//     return num;
+// }//точку с запятой не надо
+
+// const anotherNum = ret();
+// console.log(anotherNum);
+
+// const logger = function(){//function expression
+// console.log("Hello!");
+// };//тотчку с запятой надо
+// logger();
+
+// const calc = (a, b) =>{ return a + b};//стрелочная функция
+// let a = 3;
+// function addTwo (x){
+//     let ret = x+2;
+//     return ret;
+// }
+// let b = addTwo (a);
+// console.log(b);
+
+// let val1 = 2
+// function multiplyThis(n) {
+// let ret = n * val1
+// return ret
+//  }
+// let multiplied = multiplyThis(6)
+//  console.log('example of scope:', multiplied)
+// function createCounter() {
+//        let counter = 0;
+//        const myFunction = function() {
+//          counter = counter + 1;
+//          return counter;
+//        };
+//        return myFunction;
+//      }
+
+//     const increment = createCounter();
+//     const c1 = increment();
+//     const c2 = increment();
+//     const c3 = increment();
+//     console.log('example increment', c1, c2, c3);
+
+// let age = 11;
+// let accompanied = false;
+// let enterAge = 12;
+// console.log(age >= enterAge || accompanied);
+// let dinosaurs = [
+// "Тираннозавр", 
+// "Велоцираптор", 
+// "Стегозавр", 
+// "Трицератопс", 
+// "Брахиозавр", 
+// "Птеранодон", 
+// "Апатозавр", 
+// "Диплодок", 
+// "Компсогнат"
+// ];
+// console.log(dinosaurs[0]);
+// dinosaurs[0]="tiran";
+// console.log(dinosaurs[0]);
+
+// Unit17
+
+const str = "teSt";
+console.log(str.length);
+const arr =[1,2,4];
+console.log(arr.length);
+console.log(str[2]);
+// console.log(str[2]="d");
+console.log(str.toUpperCase());
+console.log(str);
+console.log(str.toLocaleLowerCase());
+console.log(str);
+
+const fruit = "Some fruit";
+console.log(fruit.slice(3, 10));
+console.log(fruit.indexOf("fruit"));//поиск подстроки. с какой позиции начинается слово 01234 если -1 то такого слова нет
+
+const logg = "Hello world";
+console.log(logg.slice(6, 10));//worl 0123456789 10
+console.log(logg.slice(6, 11));//world c 6-11 но не включая 11
+console.log(logg.slice(-4, -2));//or не включая 4 с конца заканчивая второй с конца
+console.log(logg.substring(6,5));
+console.log(logg.substr(6, 5));//во втором аргументе указывается сколько символов надо вырезать
+
+const num = 12.3;
+console.log(Math.round(num));//округляет
+
+const test = "12.2";
+console.log(parseInt(test));//из строки число
+console.log(parseFloat(test));
+
