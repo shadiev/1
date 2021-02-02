@@ -230,53 +230,109 @@ str.length - и получить её длину)
 //     const c3 = increment();
 //     console.log('example increment', c1, c2, c3);
 
-// let age = 11;
-// let accompanied = false;
-// let enterAge = 12;
-// console.log(age >= enterAge || accompanied);
-// let dinosaurs = [
-// "Тираннозавр", 
-// "Велоцираптор", 
-// "Стегозавр", 
-// "Трицератопс", 
-// "Брахиозавр", 
-// "Птеранодон", 
-// "Апатозавр", 
-// "Диплодок", 
-// "Компсогнат"
-// ];
-// console.log(dinosaurs[0]);
-// dinosaurs[0]="tiran";
-// console.log(dinosaurs[0]);
+
 
 // Unit17
 
-const str = "teSt";
-console.log(str.length);
-const arr =[1,2,4];
-console.log(arr.length);
-console.log(str[2]);
-// console.log(str[2]="d");
-console.log(str.toUpperCase());
-console.log(str);
-console.log(str.toLocaleLowerCase());
-console.log(str);
+// const str = "teSt";
+// console.log(str.length);
+// const arr =[1,2,4];
+// console.log(arr.length);
+// console.log(str[2]);
+// // console.log(str[2]="d");
+// console.log(str.toUpperCase());
+// console.log(str);
+// console.log(str.toLocaleLowerCase());
+// console.log(str);
 
-const fruit = "Some fruit";
-console.log(fruit.slice(3, 10));
-console.log(fruit.indexOf("fruit"));//поиск подстроки. с какой позиции начинается слово 01234 если -1 то такого слова нет
+// const fruit = "Some fruit";
+// console.log(fruit.slice(3, 10));
+// console.log(fruit.indexOf("fruit"));//поиск подстроки. с какой позиции начинается слово 01234 если -1 то такого слова нет
 
-const logg = "Hello world";
-console.log(logg.slice(6, 10));//worl 0123456789 10
-console.log(logg.slice(6, 11));//world c 6-11 но не включая 11
-console.log(logg.slice(-4, -2));//or не включая 4 с конца заканчивая второй с конца
-console.log(logg.substring(6,5));
-console.log(logg.substr(6, 5));//во втором аргументе указывается сколько символов надо вырезать
+// const logg = "Hello world";
+// console.log(logg.slice(6, 10));//worl 0123456789 10
+// console.log(logg.slice(6, 11));//world c 6-11 но не включая 11
+// console.log(logg.slice(-4, -2));//or не включая 4 с конца заканчивая второй с конца
+// console.log(logg.substring(6,5));
+// console.log(logg.substr(6, 5));//во втором аргументе указывается сколько символов надо вырезать
 
-const num = 12.3;
-console.log(Math.round(num));//округляет
+// const num = 12.3;
+// console.log(Math.round(num));//округляет
 
-const test = "12.2";
-console.log(parseInt(test));//из строки число
-console.log(parseFloat(test));
+// const test = "12.2";
+// console.log(parseInt(test));//из строки число
+// console.log(parseFloat(test));
+
+let numderOfFilms;
+
+function start() {
+    numderOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?', '');
+
+    while (numderOfFilms == "" || numderOfFilms ==null || isNaN(numderOfFilms)){
+        numderOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?', '');
+    }
+}
+start();
+const personalMovieDB = {
+        count: numderOfFilms,
+        movies: {},
+        actors: {},
+        genres: [],
+        privat: false
+};
+function rememberMyFilms() {
+for(let i=0;i<2;i++){
+    const   a = prompt('Один из последних просмотренных фильмов?', ''),
+            b = prompt('На сколько оцените его?', '');
+                
+    if(a != null && b !=null && a != "" && b !="" && a.length < 50){
+            personalMovieDB.movies[a] = b;
+            console.log("done");
+        }else{
+            console.log("error");
+            i--;
+        }
+    }
+}
+rememberMyFilms();
+// personalMovieDB.movies[c] = d;
+
+function detectPersonalLevel(){
+    if (personalMovieDB.count < 10){
+        console.log("Просмотрено довольно мало фильмов");
+    }else if(personalMovieDB.count >=10 <30 ){
+        console.log("Вы классический зритель");
+    }else if(personalMovieDB.count >= 30){
+        console.log("Вы киноман");
+    }else {
+        console.log("Произошла ошибка");
+    }
+}
+// detectPersonalLevel();
+
+// function showMyDB(){
+//  if(privat==false)
+//     console.log(personalMovieDB);
+// }
+// showMyDB();
+function showMyDB(hidden){
+    if(!hidden)
+       console.log(personalMovieDB);
+   }
+   showMyDB(personalMovieDB.privat);
+
+
+   function writeYourGenres(){
+    for(let i=1; i<=3; i++){
+    personalMovieDB.genres[i-1]=prompt(`Ваш любимый жанр под номером ${i}`);//быстрее
+    }
+}
+ writeYourGenres();
+//    function writeYourGenres(){
+//     for(let i=1; i<=3; i++){
+//         const c = prompt(`Ваш любимый жанр под номером ${i}`);//медленне
+//         personalMovieDB.genres[i-1]=c;
+//     }
+// }
+//  writeYourGenres();
 
